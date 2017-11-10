@@ -18,4 +18,26 @@ public class Tests {
         assertThat(t.solution(data)).isEqualTo(5);
 
     }
+
+    @Test
+    public void maxCounter() throws  Exception{
+        MaxCounters t = new MaxCounters();
+
+        int[] data = new int[]{3, 4, 4, 6, 1, 4, 4};
+        int[] res = new int[]{3, 2, 2, 4, 2};
+
+        assertThat(t.solution(5, data)).isEqualTo(res);
+
+    }
+
+    @Test
+    public void genomicRangeQuery() throws  Exception {
+        GenomicRangeQuery t = new GenomicRangeQuery();
+
+        String s = "CAGCCTA";
+        int[] P = new int[]{2, 5, 0};
+        int[] Q = new int[]{4, 5, 6};
+
+        int[] res = t.solution(s, P, Q);
+    }
 }
