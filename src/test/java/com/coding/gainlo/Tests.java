@@ -46,6 +46,8 @@ public class Tests {
         assertThat(t.apply("1234").size()).isEqualTo(24);
         assertThat(t.apply("12345").size()).isEqualTo(120);
         assertThat(verifyUniqueness(t.apply("12345"), 120)).isEqualTo(true);
+
+//        System.out.println(t.apply("123"));
     }
 
     @Test
