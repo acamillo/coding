@@ -131,4 +131,18 @@ public class Tests {
 
         assertThat(t.solution(A3, B3)).isEqualTo(2);
     }
+
+    @Test
+    public void stoneWall() {
+        StoneWall t = new StoneWall();
+
+        int[] H1 = {8, 8, 5, 7, 9, 8, 7, 4, 8};
+        assertThat(t.solution(H1)).isEqualTo(7);
+
+        int[] H2 = {8, 8, 5, 7, 9, 8, 7, 5, 8};
+        assertThat(t.solution(H2)).isEqualTo(6);
+
+        int[] H3 = {2, 5, 1, 4, 6, 7, 9, 10, 1};
+        assertThat(t.solution(H3)).isEqualTo(8);
+    }
 }
