@@ -86,4 +86,49 @@ public class Tests {
 
         int[] res = t.solution(s, P, Q);
     }
+
+
+    @Test
+    public void nesting() {
+        Nesting t = new Nesting();
+
+        assertThat(t.solution("(()(())())")).isEqualTo(1);
+        assertThat(t.solution("())")).isEqualTo(0);
+        assertThat(t.solution(")(()")).isEqualTo(0);
+
+    }
+
+    @Test
+    public void brackets() {
+        Brackets t = new Brackets();
+
+        assertThat(t.solution("{[()()]}")).isEqualTo(1);
+        assertThat(t.solution("{[(())()]}")).isEqualTo(1);
+        assertThat(t.solution("([)()]")).isEqualTo(0);
+    }
+
+    @Test
+    public void fish() {
+        Fish t = new Fish();
+
+        int[] A = {4, 3, 2, 1, 5};
+        int[] B = {0, 1, 0, 0, 0};
+
+        assertThat(t.solution(A, B)).isEqualTo(2);
+
+        int[] A1 = {4, 3};
+        int[] B1 = {0, 1};
+
+        assertThat(t.solution(A1, B1)).isEqualTo(2);
+
+        int[] A2 = {4, 3, 2, 1, 5};
+        int[] B2 = {1, 1, 0, 0, 0};
+
+        assertThat(t.solution(A2, B2)).isEqualTo(1);
+
+        int[] A3 = {4, 6, 3, 2, 1, 5};
+        int[] B3 = {1, 0, 1, 0, 0, 0};
+
+        assertThat(t.solution(A3, B3)).isEqualTo(2);
+    }
 }
