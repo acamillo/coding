@@ -62,6 +62,11 @@ public class Fish {
         int survived = A.length;
         Stack<Integer> down = new Stack<>();
 
+        // uses the same rational as for parenthesis matching ()
+        // when direction is down (i.e. '('), the fish is pushed on the stack
+        // when direction is up (i.e. ')') it pop the fish from the stack and fight them.
+        // if the new came wins.. then it pops another fish from the stack until
+        // either he loses, or the stack gets empty.
         for (int i = 0; i < B.length; i++) {
             if (B[i] == 1) {
                 down.push(i);
