@@ -3,6 +3,10 @@ package com.coding.codility;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -144,5 +148,77 @@ public class Tests {
 
         int[] H3 = {2, 5, 1, 4, 6, 7, 9, 10, 1};
         assertThat(t.solution(H3)).isEqualTo(8);
+    }
+
+    @Test
+    public void dominator() {
+        Dominator t = new Dominator();
+
+        int[] A1 = {3, 4, 3, 2, 3, -1, 3, 3};
+
+        Set<Integer> sols = new HashSet<>(Arrays.asList(0, 2, 4, 6, 7));
+        assertThat(sols).contains(t.solution(A1));
+    }
+
+    @Test
+    public void equiLeader() {
+        EquiLeader t = new EquiLeader();
+
+        int[] A1 = {4, 3, 4, 4, 4, 2};
+        assertThat(t.solution(A1)).isEqualTo(2);
+
+        int[] A2 = {4, 4, 2, 5, 3, 4, 4, 4};
+        assertThat(t.solution(A2)).isEqualTo(3);
+
+        int[] A3 = {1, 2, 1, 1, 2, 1};
+        assertThat(t.solution(A3)).isEqualTo(3);
+
+        int[] A4 = {1, 2};
+        assertThat(t.solution(A4)).isEqualTo(0);
+    }
+
+
+    @Test
+    public void maxDoubleSliceSum() {
+        MaxDoubleSliceSum t = new MaxDoubleSliceSum();
+
+        int[] A = {3, 2, 6, -1, 4, 5, -1, 2};
+        assertThat(t.solution(A)).isEqualTo(17);
+
+//        int []B = {6, 1, 5, 6, 4, 2, 9, 4};
+//        assertThat(t.solution(B)).isEqualTo(26);
+//
+//        int []C = {-2, -3, -4, 1, -5, -6, -7};
+//        assertThat(t.solution(C)).isEqualTo(1);
+//
+//        int []D = {-8, 10, 20, -5, -7, -4};
+//        assertThat(t.solution(D)).isEqualTo(30);
+
+    }
+
+    @Test
+    public void maxProfit() {
+        MaxProfit t = new MaxProfit();
+
+        int[] A = {23171, 21011, 21123, 21366, 21013, 21367};
+        assertThat(t.solution(A)).isEqualTo(356);
+
+        int[] B = {23171, 21011, 21123, 21366, 21013, 21367, 0, 25000};
+        assertThat(t.solution(B)).isEqualTo(25000);
+    }
+
+
+    @Test
+    public void maxSliceSum() {
+        MaxSliceSum t = new MaxSliceSum();
+
+        int[] A = {3, 2, -6, 4, 0};
+        assertThat(t.solution(A)).isEqualTo(5);
+
+        int[] B = {5, -7, 3, 5, -2, 4, -1};
+        assertThat(t.solution(B)).isEqualTo(10);
+
+        int[] C = {-2, 1};
+        assertThat(t.solution(C)).isEqualTo(1);
     }
 }
