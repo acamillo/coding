@@ -56,7 +56,7 @@ public class StoneWall {
 
         // In case the new height is greater than the last on the stack, it's east.
         // we need a new block and keep track of the new current height pushing it onto the stack.
-        
+
         // In case the new height is the same as before.. nothing happens
         for (int h : H) {
             if (h < s.peek()) {
