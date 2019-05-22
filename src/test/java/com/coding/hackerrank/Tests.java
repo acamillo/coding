@@ -98,4 +98,15 @@ public class Tests {
         assertThat(t.squares(35, 70)).isEqualTo(3);
         assertThat(t.squares(100, 1000)).isEqualTo(22);
     }
+
+    @Test
+    public void encryption() {
+        Encryption t = new Encryption();
+
+        String res;
+        res = t.encryption("haveaniceday");
+        res = t.encryption("feedthedog");
+        res = t.encryption("chillout");
+        res = t.encryption("ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots");
+    }
 }
