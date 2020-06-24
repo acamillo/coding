@@ -1,7 +1,5 @@
 package com.coding.epi;
 
-import com.coding.codility.*;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.*;
@@ -153,11 +151,85 @@ public class Tests {
 
     @Test
     public void mergeSortedArray() {
-        List<Integer> v1 = Arrays.asList( 2, 4, 6, 8, 10, 12);
-        List<Integer> v2 = Arrays.asList( 1,5,9);
+        List<Integer> v1 = Arrays.asList(2, 4, 6, 8, 10, 12);
+        List<Integer> v2 = Arrays.asList(1, 5, 9);
 
         List<Integer> r = new MergeSortedArrays().merge(v1, v2);
-        assertThat(r).isEqualTo(Arrays.asList(1,2,4,5,6,8,9,10,12));
+        assertThat(r).isEqualTo(Arrays.asList(1, 2, 4, 5, 6, 8, 9, 10, 12));
+    }
+
+
+    @Test
+    public void mergeSortedInPlace() {
+        int[] a = {2, 4, 6, 8, 10, 12, 100, 100, 100};
+        int[] b = new int[]{1, 5, 9};
+
+        int[] r = new MergeSortedInPlace().merge(a, b, 5);
+        assertThat(r).isEqualTo(Arrays.asList(1, 2, 4, 5, 6, 8, 9, 10, 12).toArray(new Integer[0]));
+
+    }
+
+    @Test
+    public void phoneMnemonic() {
+        PhoneMnemonic phoneMnemonic = new PhoneMnemonic();
+
+        List<String> mnemonics = phoneMnemonic.phoneMnemonic("23");
+//        System.out.println(mnemonics.size());
+        System.out.println(mnemonics.toString());
+        assertThat(phoneMnemonic.phoneMnemonic("23")).containsSequence(
+                Arrays.asList("AD", "AE", "AF", "BD", "BE", "BF", "CD", "CE", "CF")
+        );
+    }
+
+    @Test
+    public void validIpAddress() {
+        ValidIpAddress validIpAddress = new ValidIpAddress();
+
+        String ip1 = "19216811";
+        List<String> ips = validIpAddress.getValidIpAddress(ip1);
+
+        System.out.println(ips.toString());
+        assertThat(ips.size()).isEqualTo(9);
+    }
+
+    @Test
+    public void rleCodec() {
+        RLECodec codec = new RLECodec();
+
+        String r1 = codec.encode("aaabccccaa");
+        assertThat(r1).isEqualTo("3a1b4c2a");
+
+        String r2 = codec.encode("aaaaa");
+        assertThat(r2).isEqualTo("5a");
+
+        String r3 = codec.encode("b");
+        assertThat(r3).isEqualTo("1b");
+    }
+
+    @Test
+    public void treeTraverse() {
+        int [] preOrder = {10,8,2,5,4,20};
+        int [] inOrder = {8,5,2,4,10,20};
+        ConstructTreeFromInOrderPreOrder ctfip = new ConstructTreeFromInOrderPreOrder();
+        BinaryTreeNode tree = ctfip.createTree(inOrder, preOrder);
+
+        TreeTraverse tt = new TreeTraverse();
+
+        System.out.println(tt.preOrder(tree));
+        System.out.println(tt.inOrder(tree));
+        System.out.println(tt.postOrder(tree));
+    }
+
+    @Test
+    public void binarySearch() {
+        BinarySearch bSearch = new BinarySearch();
+
+        final int[] arr1 = {1, 2, 4, 5, 7, 8};
+        System.out.println(bSearch.search(arr1, -1));
+        System.out.println(bSearch.search(arr1, 1));
+        System.out.println(bSearch.search(arr1, 8));
+        System.out.println(bSearch.search(arr1, 2));
+        System.out.println(bSearch.search(arr1, 6));
     }
 
 }
